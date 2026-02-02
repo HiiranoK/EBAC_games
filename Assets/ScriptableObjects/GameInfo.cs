@@ -7,8 +7,8 @@ public class GameInfo : ScriptableObject
     [SerializeField] public string enemyName;
     [SerializeField] public int playerHighScore;
     [SerializeField] public int enemyHighScore;
-    [SerializeField] public Color playerColor;
-    [SerializeField] public Color enemyColor;
+    [SerializeField] public Color playerColor = Color.white;
+    [SerializeField] public Color enemyColor = Color.white;
 
     public void ResetInfo()
     {
