@@ -2,30 +2,6 @@
     <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyles.uss?fileID=7433441132597879392&amp;guid=936ad0922c49d5b14a15048772a4e921&amp;type=3#MainMenuStyles"/>
     <ui:VisualElement name="VisualElement" enabled="true" style="flex-grow: 1; justify-content: center; align-items: auto; align-self: auto; align-content: auto; width: auto; height: auto; max-height: none; min-height: 15%;">
         <ui:Label text="PAUSED" name="Label" style="flex-grow: 0; align-self: center; justify-content: flex-end; align-items: auto; -unity-font-style: bold; font-size: 100px; flex-wrap: nowrap; color: rgb(255, 253, 253);"/>
-        <ui:VisualElement name="ColorSelector" style="flex-grow: 0; align-items: auto; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-self: stretch; align-content: flex-start;">
-            <ui:VisualElement style="flex-grow: 1; align-content: auto; align-items: auto;">
-                <ui:Label text="Player Color" name="PlayerColor" class="Headers headers" style="align-items: auto; justify-content: center; align-self: center; flex-direction: column; align-content: auto;"/>
-                <ui:GroupBox data-source="project://database/Assets/Data/PongGameInfo.asset?fileID=11400000&amp;guid=411d3fa6add68b47e8bb1c66f4323cc4&amp;type=2#PongGameInfo" name="PlayerGroupBox" class="colorButton" style="-unity-text-align: middle-left; align-self: center; align-items: auto; flex-direction: row; flex-wrap: wrap; flex-shrink: 1; justify-content: flex-start; align-content: auto; flex-basis: auto; overflow: visible; flex-grow: 0;">
-                    <ui:Button text="" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" name="PlayerRed" class="colorButton" style="width: auto; flex-direction: row; -unity-text-outline-color: rgb(239, 23, 23); background-color: rgb(255, 0, 0);"/>
-                    <ui:Button text="" name="PlayerGreen" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" class="colorButton" style="width: auto; background-color: rgb(2, 255, 18);"/>
-                    <ui:Button text="" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" name="PlayerBlue" class="colorButton" style="width: auto; background-color: rgb(0, 99, 255);"/>
-                    <ui:Button text="" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" name="PlayerYellow" class="colorButton" style="width: auto; background-color: rgb(253, 255, 0);"/>
-                    <ui:Button text="" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" name="PlayerPurple" class="colorButton" style="width: auto; background-color: rgb(148, 0, 255);"/>
-                    <ui:Button text="" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" name="PlayerWhite" class="colorButton" style="width: auto; background-color: rgb(255, 255, 255); background-image: none;"/>
-                </ui:GroupBox>
-            </ui:VisualElement>
-            <ui:VisualElement style="flex-grow: 1; flex-direction: column; align-items: auto; justify-content: flex-start; align-self: auto; align-content: auto; flex-shrink: 1;">
-                <ui:Label text="Enemy Color" name="EnemyColor" class="Headers headers" style="align-self: center; align-content: auto; justify-content: space-evenly; align-items: stretch; flex-direction: row-reverse; flex-wrap: nowrap; -unity-text-align: middle-center; white-space: normal;"/>
-                <ui:GroupBox name="EnemyGroupBox" class="colorButton" style="-unity-text-align: middle-left; align-self: center; align-items: auto; flex-direction: row; flex-wrap: wrap; flex-shrink: 1; justify-content: flex-start; align-content: auto; flex-basis: auto; overflow: visible; flex-grow: 0;">
-                    <ui:Button text="" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" name="EnemyRed" class="colorButton" style="width: auto; flex-direction: row; -unity-text-outline-color: rgb(239, 23, 23); background-color: rgb(255, 0, 0);"/>
-                    <ui:Button text="" name="EnemyGreen" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" class="colorButton" style="width: auto; background-color: rgb(2, 255, 18);"/>
-                    <ui:Button text="" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" name="EnemyBlue" class="colorButton" style="width: auto; background-color: rgb(0, 99, 255);"/>
-                    <ui:Button text="" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" name="EnemyYellow" class="colorButton" style="width: auto; background-color: rgb(253, 255, 0);"/>
-                    <ui:Button text="" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" name="EnemyPurple" class="colorButton" style="width: auto; background-color: rgb(148, 0, 255);"/>
-                    <ui:Button text="" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" name="EnemyWhite" class="colorButton" style="width: auto; background-color: rgb(255, 255, 255); background-image: none;"/>
-                </ui:GroupBox>
-            </ui:VisualElement>
-        </ui:VisualElement>
         <ui:Button text="Main Menu" enabled="true" name="MainMenuButton" class="button" style="-unity-font-style: bold; font-size: 50px; align-self: center;"/>
     </ui:VisualElement>
 </ui:UXML>

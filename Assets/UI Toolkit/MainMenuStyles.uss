@@ -77,8 +77,6 @@
     font-size: 15px;
 }
 
-
-
 .textElement {
 }
 
@@ -86,7 +84,5 @@
     color: rgb(0, 0, 0);
     -unity-font-style: bold;
 }
-
-
 
 

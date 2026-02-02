@@ -1,78 +1,81 @@
 using UnityEngine;
-public class GameManager : MonoBehaviour
+
+namespace Pong
 {
+    public class GameManager : MonoBehaviour
+    {
     
     
     
-    [SerializeField] private Transform playerPaddle;
-    [SerializeField] private Transform enemyPaddle;
-    [SerializeField] private GameInfo gameInfo;
-    [SerializeField] private BallController ballController;
+        [SerializeField] private Transform playerPaddle;
+        [SerializeField] private Transform enemyPaddle;
+        [SerializeField] private GameInfo gameInfo;
+        [SerializeField] private BallController ballController;
     
-    [SerializeField]private GameScore _score;
+        [SerializeField]private GameScore score;
     
-    [SerializeField]private int winPoints = 5;
-    private int playerScore = 0;
-    private int enemyScore = 0;
+        [SerializeField]private int winPoints = 5;
+        private int _playerScore = 0;
+        private int _enemyScore = 0;
 
-    void Start()
-    {
-        ResetGame();
-    }
-
-    private void OnEnable()
-    {
-        BallController.OnPlayerScored += ScorePlayer;
-        BallController.OnEnemyScored += ScoreEnemy;
-        playerPaddle.gameObject.GetComponent<SpriteRenderer>().color = gameInfo.playerColor;
-        enemyPaddle.gameObject.GetComponent<SpriteRenderer>().color = gameInfo.enemyColor;
-    }
-
-    private void OnDisable()
-    {
-        BallController.OnPlayerScored -= ScorePlayer;
-        BallController.OnEnemyScored -= ScoreEnemy;
-    }
-        
-    private void ResetGame()
-    {
-        playerPaddle.position = new Vector3(-7f, 0f, 0f);
-        enemyPaddle.position = new Vector3(7f, 0f, 0f);
-        ballController.ResetBall(1f);
-        
-        playerScore = 0;
-        enemyScore = 0;
-        _score.UpdatePlayerScore(playerScore);
-        _score.UpdateEnemyScore(enemyScore);
-    }
-
-    private void ScorePlayer()
-    {
-        playerScore++;
-        _score.UpdatePlayerScore(playerScore);
-        gameInfo.CheckSetPlayerHighScore(playerScore);
-        CheckWin();
-    }
-
-    private void ScoreEnemy()
-    {
-        enemyScore++;
-        _score.UpdateEnemyScore(enemyScore);
-        gameInfo.CheckSetEnemyHighScore(enemyScore);
-        CheckWin();
-    }
-    
-    private void CheckWin()
-    {
-        if (playerScore >= winPoints)
+        void Start()
         {
-            _score.UpdateEndGame(gameInfo.playerName);
             ResetGame();
         }
-        else if (enemyScore >= winPoints)
+
+        private void OnEnable()
         {
-            _score.UpdateEndGame("Enemy");
-            ResetGame();
+            BallController.OnPlayerScored += ScorePlayer;
+            BallController.OnEnemyScored += ScoreEnemy;
+            playerPaddle.gameObject.GetComponent<SpriteRenderer>().color = gameInfo.playerColor;
+            enemyPaddle.gameObject.GetComponent<SpriteRenderer>().color = gameInfo.enemyColor;
+        }
+
+        private void OnDisable()
+        {
+            BallController.OnPlayerScored -= ScorePlayer;
+            BallController.OnEnemyScored -= ScoreEnemy;
+        }
+        
+        private void ResetGame()
+        {
+            playerPaddle.position = new Vector3(-7f, 0f, 0f);
+            enemyPaddle.position = new Vector3(7f, 0f, 0f);
+            ballController.ResetBall(1f);
+            _playerScore = 0;
+            _enemyScore = 0;
+            score.UpdatePlayerScore(_playerScore);
+            score.UpdateEnemyScore(_enemyScore);
+        }
+
+        private void ScorePlayer()
+        {
+            _playerScore++;
+            score.UpdatePlayerScore(_playerScore);
+            gameInfo.CheckSetPlayerHighScore(_playerScore);
+            CheckWin();
+        }
+
+        private void ScoreEnemy()
+        {
+            _enemyScore++;
+            score.UpdateEnemyScore(_enemyScore);
+            gameInfo.CheckSetEnemyHighScore(_enemyScore);
+            CheckWin();
+        }
+    
+        private void CheckWin()
+        {
+            if (_playerScore >= winPoints)
+            {
+                score.UpdateEndGame(gameInfo.playerName);
+                ResetGame();
+            }
+            else if (_enemyScore >= winPoints)
+            {
+                score.UpdateEndGame(gameInfo.enemyName);
+                ResetGame();
+            }
         }
     }
 }
