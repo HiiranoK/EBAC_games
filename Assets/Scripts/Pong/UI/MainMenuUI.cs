@@ -1,3 +1,4 @@
+using System;
 using UITKUtils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,6 +24,8 @@ namespace Pong.UI
         private Button _clearSavedData;
         private Button _confirmDelete;
         private Button _cancelDelete;
+        private Image _playerImage;
+        private Image _enemyImage;
 
         private VisualElement _deleteUI;
         private VisualElement _root;
@@ -51,8 +54,13 @@ namespace Pong.UI
             _confirmDelete?.RegisterCallback<ClickEvent>(evt => ClearData());
             _cancelDelete = _root.Q<Button>("CancelDelete");
             _cancelDelete?.RegisterCallback<ClickEvent>(evt => DeleteWindowOff());
+            
+            _playerImage = _root.Q<Image>("PlayerImg");
+            _playerImage.tintColor = gameInfo.playerColor;
+            _enemyImage = _root.Q<Image>("EnemyImg");
+            _enemyImage.tintColor = gameInfo.enemyColor;
+            
             DeleteWindowOff();
-
             PlayerButtons();
             EnemyButtons();
         }

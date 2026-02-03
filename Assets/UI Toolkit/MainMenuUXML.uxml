@@ -3,7 +3,7 @@
     <ui:VisualElement style="flex-grow: 0; flex-direction: row; justify-content: space-between;">
         <ui:VisualElement name="VisualElement" style="flex-grow: 0; align-self: flex-start; align-items: flex-start; justify-content: space-evenly; flex-shrink: 0; align-content: stretch; flex-wrap: wrap; flex-direction: column;">
             <ui:Label text="Player High Score:" name="pHSLabel" class="headers"/>
-            <ui:Label text="00" name="PlayerHSValue" data-source="project://database/Assets/Data/PongGameInfo.asset?fileID=11400000&amp;guid=411d3fa6add68b47e8bb1c66f4323cc4&amp;type=2#PongGameInfo" class="headers">
+            <ui:Label text="00" name="PlayerHSValue" data-source="" class="headers">
                 <Bindings>
                     <ui:DataBinding property="text" data-source-path="playerHighScore" binding-mode="ToTarget"/>
                 </Bindings>
@@ -11,7 +11,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="VisualElement" style="flex-grow: 0; align-self: flex-start; justify-content: flex-start; align-items: auto; align-content: auto; flex-shrink: 0; flex-direction: column; flex-wrap: wrap;">
             <ui:Label text="Enemy High Score" name="eHSLabel" class="headers"/>
-            <ui:Label text="00" name="eHSValue" data-source="project://database/Assets/Data/PongGameInfo.asset?fileID=11400000&amp;guid=411d3fa6add68b47e8bb1c66f4323cc4&amp;type=2#PongGameInfo" class="headers">
+            <ui:Label text="00" name="eHSValue" data-source="" class="headers">
                 <Bindings>
                     <ui:DataBinding property="text" data-source-path="enemyHighScore" binding-mode="ToTarget"/>
                 </Bindings>
@@ -27,21 +27,21 @@
         <ui:VisualElement name="ColorSelector" style="flex-grow: 0; align-items: auto; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-self: stretch; align-content: flex-start; left: auto; right: auto;">
             <ui:Image source="project://database/Resources/unity_builtin_extra?fileID=10305&amp;guid=0000000000000000f000000000000000&amp;type=0#Default-Checker" scale-mode="ScaleAndCrop" name="PlayerImg" style="align-self: flex-start; height: 270px; width: 46px; margin-left: 50px;">
                 <Bindings>
-                    <ui:DataBinding property="tintColor" data-source-path="playerColor" data-source="project://database/Assets/Data/PongGameInfo.asset?fileID=11400000&amp;guid=411d3fa6add68b47e8bb1c66f4323cc4&amp;type=2#PongGameInfo" binding-mode="ToTarget"/>
+                    <ui:DataBinding property="tintColor" data-source-path="playerColor" data-source="project://database/Assets/Data/PongGameInfo.asset?fileID=11400000&amp;guid=6075965aea721f645b4eeee04d1f2ac6&amp;type=2#PongGameInfo" binding-mode="ToTarget"/>
                 </Bindings>
             </ui:Image>
             <ui:VisualElement style="flex-grow: 1; align-content: auto; align-items: auto; align-self: flex-start;">
                 <ui:Label text="Player Color" name="PlayerColor" class="Headers headers" style="align-items: auto; justify-content: center; align-self: flex-start; flex-direction: column; align-content: auto;"/>
                 <ui:VisualElement name="VisualElement" style="flex-grow: 0; -unity-text-align: upper-center; align-content: stretch; align-items: auto; align-self: flex-start; flex-direction: row; justify-content: flex-start; flex-wrap: nowrap;">
                     <ui:VisualElement name="VisualElement" style="flex-grow: 1; flex-wrap: wrap; flex-direction: column;">
-                        <ui:TextField label="Player Name" name="PlayerName" data-source="project://database/Assets/Data/PongGameInfo.asset?fileID=11400000&amp;guid=411d3fa6add68b47e8bb1c66f4323cc4&amp;type=2#PongGameInfo" placeholder-text="PlaceHolder" value="" class="headers">
+                        <ui:TextField label="Player Name" name="PlayerName" data-source="" placeholder-text="PlaceHolder" value="" class="headers">
                             <Bindings>
-                                <ui:DataBinding property="value" data-source-path="playerName" binding-mode="TwoWay"/>
+                                <ui:DataBinding property="value" data-source-path="playerName" binding-mode="TwoWay" data-source="project://database/Assets/Data/PongGameInfo.asset?fileID=11400000&amp;guid=6075965aea721f645b4eeee04d1f2ac6&amp;type=2#PongGameInfo"/>
                             </Bindings>
                         </ui:TextField>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:GroupBox data-source="project://database/Assets/Data/PongGameInfo.asset?fileID=11400000&amp;guid=411d3fa6add68b47e8bb1c66f4323cc4&amp;type=2#PongGameInfo" name="PlayerGroupBox" class="colorButton" style="-unity-text-align: middle-left; align-self: flex-start; align-items: auto; flex-direction: row; flex-wrap: wrap; flex-shrink: 1; justify-content: flex-start; align-content: auto; flex-basis: auto; overflow: visible; flex-grow: 0;">
+                <ui:GroupBox data-source="" name="PlayerGroupBox" class="colorButton" style="-unity-text-align: middle-left; align-self: flex-start; align-items: auto; flex-direction: row; flex-wrap: wrap; flex-shrink: 1; justify-content: flex-start; align-content: auto; flex-basis: auto; overflow: visible; flex-grow: 0;">
                     <ui:Button text="" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" name="PlayerRed" class="colorButton" style="width: auto; flex-direction: row; -unity-text-outline-color: rgb(239, 23, 23); background-color: rgb(255, 0, 0);"/>
                     <ui:Button text="" name="PlayerGreen" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" class="colorButton" style="width: auto; background-color: rgb(2, 255, 18);"/>
                     <ui:Button text="" icon-image="project://database/Resources/unity_builtin_extra?fileID=10916&amp;guid=0000000000000000f000000000000000&amp;type=0#UIMask" name="PlayerBlue" class="colorButton" style="width: auto; background-color: rgb(0, 99, 255);"/>
@@ -54,9 +54,9 @@
                 <ui:Label text="Enemy Color" name="EnemyColor" class="Headers headers" style="align-self: flex-end; align-content: auto; justify-content: space-evenly; align-items: stretch; flex-direction: row-reverse; flex-wrap: nowrap; -unity-text-align: middle-center; white-space: normal;"/>
                 <ui:VisualElement name="VisualElement" style="flex-grow: 0; -unity-text-align: upper-center; align-content: stretch; align-items: auto; align-self: flex-end; flex-direction: row; justify-content: flex-start; flex-wrap: nowrap;">
                     <ui:VisualElement name="VisualElement" style="flex-grow: 1; flex-wrap: wrap; flex-direction: column;">
-                        <ui:TextField label="Enemy Name" name="EnemyName" data-source="project://database/Assets/Data/PongGameInfo.asset?fileID=11400000&amp;guid=411d3fa6add68b47e8bb1c66f4323cc4&amp;type=2#PongGameInfo" placeholder-text="PlaceHolder" value="" class="headers">
+                        <ui:TextField label="Enemy Name" name="EnemyName" data-source="" placeholder-text="PlaceHolder" value="" class="headers">
                             <Bindings>
-                                <ui:DataBinding property="value" data-source-path="enemyName" binding-mode="TwoWay"/>
+                                <ui:DataBinding property="value" data-source-path="enemyName" binding-mode="TwoWay" data-source="project://database/Assets/Data/PongGameInfo.asset?fileID=11400000&amp;guid=6075965aea721f645b4eeee04d1f2ac6&amp;type=2#PongGameInfo"/>
                             </Bindings>
                         </ui:TextField>
                     </ui:VisualElement>
@@ -72,7 +72,7 @@
             </ui:VisualElement>
             <ui:Image source="project://database/Resources/unity_builtin_extra?fileID=10305&amp;guid=0000000000000000f000000000000000&amp;type=0#Default-Checker" scale-mode="ScaleAndCrop" name="EnemyImg" style="align-self: flex-start; height: 270px; width: 46px; margin-left: 0; margin-right: 50px;">
                 <Bindings>
-                    <ui:DataBinding property="tintColor" data-source-path="enemyColor" data-source="project://database/Assets/Data/PongGameInfo.asset?fileID=11400000&amp;guid=411d3fa6add68b47e8bb1c66f4323cc4&amp;type=2#PongGameInfo" binding-mode="ToTarget"/>
+                    <ui:DataBinding property="tintColor" data-source-path="enemyColor" data-source="project://database/Assets/Data/PongGameInfo.asset?fileID=11400000&amp;guid=6075965aea721f645b4eeee04d1f2ac6&amp;type=2#PongGameInfo" binding-mode="ToTarget"/>
                 </Bindings>
             </ui:Image>
         </ui:VisualElement>

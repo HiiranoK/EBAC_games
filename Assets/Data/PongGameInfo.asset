@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: PongGameInfo
   m_EditorClassIdentifier: Assembly-CSharp::GameInfo
   playerName: 
-  playerHighScore: 
-  enemyHighScore: 
-  playerColor: {r: 0, g: 0, b: 0, a: 0}
-  enemyColor: {r: 0, g: 0, b: 0, a: 0}
+  enemyName: 
+  playerHighScore: 0
+  enemyHighScore: 0
+  playerColor: {r: 1, g: 1, b: 1, a: 1}
+  enemyColor: {r: 1, g: 1, b: 1, a: 1}
