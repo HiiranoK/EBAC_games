@@ -3,26 +3,29 @@
     <ui:VisualElement style="flex-grow: 0; flex-direction: row; justify-content: space-between;">
         <ui:VisualElement name="VisualElement" style="flex-grow: 0; align-self: flex-start; align-items: flex-start; justify-content: space-evenly; flex-shrink: 0; align-content: stretch; flex-wrap: wrap; flex-direction: column;">
             <ui:Label text="Player High Score:" name="pHSLabel" class="headers"/>
-            <ui:Label text="00" name="PlayerHSValue" data-source="" class="headers">
+            <ui:Label name="PlayerHSValue" data-source="" class="headers">
                 <Bindings>
-                    <ui:DataBinding property="text" data-source-path="playerHighScore" binding-mode="ToTarget"/>
+                    <ui:DataBinding property="text" data-source-path="playerHighScore" data-source="project://database/Assets/Data/PongGameInfo.asset?fileID=11400000&amp;guid=6075965aea721f645b4eeee04d1f2ac6&amp;type=2#PongGameInfo" binding-mode="ToTarget"/>
                 </Bindings>
             </ui:Label>
         </ui:VisualElement>
         <ui:VisualElement name="VisualElement" style="flex-grow: 0; align-self: flex-start; justify-content: flex-start; align-items: auto; align-content: auto; flex-shrink: 0; flex-direction: column; flex-wrap: wrap;">
             <ui:Label text="Enemy High Score" name="eHSLabel" class="headers"/>
-            <ui:Label text="00" name="eHSValue" data-source="" class="headers">
+            <ui:Label name="eHSValue" data-source="" class="headers">
                 <Bindings>
-                    <ui:DataBinding property="text" data-source-path="enemyHighScore" binding-mode="ToTarget"/>
+                    <ui:DataBinding property="text" data-source-path="enemyHighScore" data-source="project://database/Assets/Data/PongGameInfo.asset?fileID=11400000&amp;guid=6075965aea721f645b4eeee04d1f2ac6&amp;type=2#PongGameInfo" binding-mode="ToTarget"/>
                 </Bindings>
             </ui:Label>
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:Label text="Data Saved" name="dataLabel" class="headers" style="-unity-text-align: middle-center; font-size: 50px; -unity-font-style: bold; -unity-background-image-tint-color: rgb(255, 0, 0); background-color: rgb(2, 43, 0);"/>
     <ui:VisualElement name="VisualElement" style="flex-grow: 1; align-self: stretch; align-content: auto; justify-content: center; align-items: center;">
         <ui:Button text="Cube" name="Cube" class="button" style="flex-direction: column; flex-wrap: nowrap; justify-content: space-between; align-self: center; align-content: center;"/>
         <ui:Button text="Pong" name="Pong" class="button"/>
-        <ui:VisualElement style="flex-grow: 0; align-items: center; align-content: stretch; justify-content: center; align-self: stretch; flex-direction: column;">
-            <ui:Button text="Clear Saved Info" name="DeleteDataButton"/>
+        <ui:VisualElement style="flex-grow: 0; align-items: center; align-content: stretch; justify-content: center; align-self: stretch; flex-direction: row;">
+            <ui:Button text="LoadFromAFile" name="LoadDataButton"/>
+            <ui:Button text="Save To File" name="SaveDataButton"/>
+            <ui:Button text="Reset Session" name="DeleteDataButton"/>
         </ui:VisualElement>
         <ui:VisualElement name="ColorSelector" style="flex-grow: 0; align-items: auto; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-self: stretch; align-content: flex-start; left: auto; right: auto;">
             <ui:Image source="project://database/Resources/unity_builtin_extra?fileID=10305&amp;guid=0000000000000000f000000000000000&amp;type=0#Default-Checker" scale-mode="ScaleAndCrop" name="PlayerImg" style="align-self: flex-start; height: 270px; width: 46px; margin-left: 50px;">
@@ -79,7 +82,7 @@
     </ui:VisualElement>
     <ui:VisualElement name="DeleteUI" enabled="true" tabindex="0" style="flex-grow: 1; position: absolute; align-items: stretch; align-content: center; height: auto; width: auto; align-self: center; top: 0; left: 0; justify-content: space-between; flex-direction: column; background-color: rgb(42, 142, 184); transition-property: flex-grow; transition-timing-function: ease-in; transition-delay: 1s; transition-duration: 1s; transform-origin: right bottom; border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; display: none; overflow: visible; margin-top: 10%; margin-right: 20%; margin-bottom: 10%; margin-left: 20%; right: 0; bottom: 0;">
         <ui:Button text="Cancel" name="CancelDelete" class="deleteUIButtons button" style="align-self: flex-start; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px; font-size: 25px; background-color: rgb(50, 205, 50); color: rgb(0, 0, 0); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);"/>
-        <ui:Label text="Are you sure you want to delete the saved data?" class="headers" style="white-space: normal; font-size: 40px;"/>
+        <ui:Label text="This action resets the values but does not overwrite the saved file." class="headers" style="white-space: normal; font-size: 40px;"/>
         <ui:Button text="Delete" name="ConfirmDelete" class="deleteUIButtons button" style="background-color: rgb(255, 0, 0); color: rgb(255, 245, 238); border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); justify-content: space-between; align-items: stretch; align-content: auto; align-self: stretch; background-repeat: no-repeat no-repeat;"/>
     </ui:VisualElement>
 </ui:UXML>

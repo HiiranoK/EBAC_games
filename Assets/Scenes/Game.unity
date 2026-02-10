@@ -1413,7 +1413,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 6075965aea721f645b4eeee04d1f2ac6, type: 2}
     - target: {fileID: 3653379918730526178, guid: 0371e93c8c65a1470a3544933f66d6c3, type: 3}
       propertyPath: winPoints
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3653379918730526178, guid: 0371e93c8c65a1470a3544933f66d6c3, type: 3}
       propertyPath: enemyPaddle

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Pong
@@ -13,7 +14,6 @@ namespace Pong
         [SerializeField] private BallController ballController;
     
         [SerializeField]private GameScore score;
-    
         [SerializeField]private int winPoints = 5;
         private int _playerScore = 0;
         private int _enemyScore = 0;
